@@ -10,5 +10,7 @@ class Balance(Base):
     name = Column(String, index=True)
     datetime = Column(Date, index=True)
     balance = Column(Float, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
     group_id = Column(Integer, ForeignKey("user_groups.id"))
     group = relationship("UserGroups", back_populates="balances")
+    user = relationship("User", back_populates="balances")

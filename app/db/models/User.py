@@ -13,3 +13,5 @@ class User(Base):
     is_active = Column(Boolean, default=True)
     hashed_password = Column(String)
     memberships = relationship("UserGroupMembership", back_populates="user")
+    expenses = relationship("Expense", back_populates="user")
+    balances = relationship("Balance", back_populates="user")
