@@ -12,6 +12,7 @@ class BalanceBase(BaseModel):
 
 
 class BalanceCreate(BalanceBase):
+    datetime: str
     pass
 
 

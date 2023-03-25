@@ -13,6 +13,7 @@ class ExpenseBase(BaseModel):
 
 
 class ExpenseCreate(ExpenseBase):
+    datetime: str
     pass
 
 

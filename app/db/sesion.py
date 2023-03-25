@@ -14,4 +14,6 @@ def create_database_tables():
     from app.db.models.UserGroupMembership import UserGroupMembership
     from app.db.models.User import User
     from app.db.models.UsersGroups import UserGroups
+    from app.db.models.Expenses import Expense
+    from app.db.models.Balance import Balance
     Base.metadata.create_all(bind=engine)
