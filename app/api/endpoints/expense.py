@@ -25,6 +25,11 @@ def add_expense(expense: ExpenseCreate, db: Session = Depends(get_db)):
     db.refresh(db_expense)
     return db_expense
 
+@router.get("/get_user_expenses/{user_id}", status_code=200)
+def get_user_expenses(user_id: int, db: Session = Depends(get_db)):
+    expenses = db.query(Expense).filter(Expense.user_id == user_id).all()
+    return expenses
+
 
 @router.get("/get_expenses/{group_id}", status_code=200)
 def get_expenses(group_id: int, db: Session = Depends(get_db)):

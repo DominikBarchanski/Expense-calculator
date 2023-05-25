@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String ,Date
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String ,Date, Float
 from sqlalchemy.orm import relationship
 
 from app.db.base import Base
@@ -9,6 +9,7 @@ class Expense(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     amount = Column(Integer, index=True)
+    price = Column(Float, index=True)
     date = Column(Date, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     user = relationship("User", back_populates="expenses")

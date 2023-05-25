@@ -6,6 +6,7 @@ from app.db.models.User import User
 
 class UsersGroupsBase(BaseModel):
     name: str
+    owner_id: int
 
     class Config:
         arbitrary_types_allowed = True

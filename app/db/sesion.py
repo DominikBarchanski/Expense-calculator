@@ -9,6 +9,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
+
 def create_database_tables():
     from app.db.base import Base
     from app.db.models.UserGroupMembership import UserGroupMembership
@@ -16,4 +17,5 @@ def create_database_tables():
     from app.db.models.UsersGroups import UserGroups
     from app.db.models.Expenses import Expense
     from app.db.models.Balance import Balance
+    from app.db.models.ProductsList import ProductsList
     Base.metadata.create_all(bind=engine)
