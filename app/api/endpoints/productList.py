@@ -19,7 +19,7 @@ def get_db():
 @router.post("/create_product", status_code=201)
 def create_product(product: ProductsListCreate, db: Session = Depends(get_db)):
     db_product = ProductsList(name=product.name, quantity=product.quantity, user_id=product.user_id,
-                              group_id=product.group_id)
+                              group_id=product.group_id,category_id=product.category_id)
     db.add(db_product)
     db.commit()
     db.refresh(db_product)

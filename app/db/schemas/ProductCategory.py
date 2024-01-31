@@ -1,23 +1,21 @@
 from pydantic import BaseModel
 
 
-class ProductsListBase(BaseModel):
+class ProductCategoryBase(BaseModel):
     id: int
     name: str
-    quantity: int
-    user_id: int
-    group_id: int
-    category_id: int
+
+
     class Config:
         orm_mode = True
         arbitrary_types_allowed = True
 
 
-class ProductsListCreate(ProductsListBase):
+class ProductListCreate(ProductCategoryBase):
     pass
 
 
-class ProductsList(ProductsListBase):
+class ProductCategory(ProductCategoryBase):
     id: int
 
     class Config:

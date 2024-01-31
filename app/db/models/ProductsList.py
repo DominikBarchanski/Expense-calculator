@@ -13,3 +13,5 @@ class ProductsList(Base):
     user = relationship("User", back_populates="products_list")
     group_id = Column(Integer, ForeignKey("user_groups.id"))
     group = relationship("UserGroups", back_populates="products_list")
+    category_id = Column(Integer, ForeignKey("product_category.id"))
+    category = relationship("ProductCategory", back_populates="products_list")

@@ -18,4 +18,5 @@ def create_database_tables():
     from app.db.models.Expenses import Expense
     from app.db.models.Balance import Balance
     from app.db.models.ProductsList import ProductsList
+    from app.db.models.ProductCategory import ProductCategory
     Base.metadata.create_all(bind=engine)
